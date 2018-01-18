@@ -48,7 +48,7 @@ h1{
 }
 
 .container{
-  display:flex;  
+  display:flex;
 /*   border:1px blue solid; */
   flex-direction:column;
     align-items:center;
@@ -60,7 +60,7 @@ h1{
 }
 
 .completed-ind{
-    text-decoration:line-through;
+  text-decoration:line-through;
   color:rgb(227, 101, 91);
 }
 
@@ -83,14 +83,13 @@ h1{
 }
 
 ul {
-  
   padding:10px 0;
   list-style-type: none;
   width:100%;
 /*   border:1px rgb(91, 140, 90) solid; */
   margin-bottom:10px;
   border-radius:10px;
- 
+
 }
 
 .todoItemStyle:focus{
@@ -143,7 +142,7 @@ li p{
   .global-buttons{
   margin:10px;
   }
-  
+
   .buttons{
     margin-top:10px;
   }
@@ -154,7 +153,7 @@ li p{
   background-color:white;
   color:rgb(91, 140, 90);
   box-shadow:0px 2px 3px gray;
-  top:2px;  
+  top:2px;
 
 }
 .global-buttons:active{
@@ -203,7 +202,7 @@ outline:none;
   border:none;
   background-color:white;
   color:rgb(227, 101, 91);
-   border-radius:5px;
+  border-radius:5px;
   padding:2px;
   box-shadow:0 2px 2px 1px rgba(227, 101, 91, .2);;
   border:none;
@@ -214,4 +213,9 @@ outline:none;
 
 .sm-btn:focus{
   outline:none;
+}
+
+.saveBtn{
+  font-size: 14px;
+  font-weight: bold;
 }

@@ -21,7 +21,7 @@ $("#add").on("click", function() {
         '<li class="eachItem">' +
           '<p class="todoItemStyle">' +
           addedTodo +
-          '</p><button class="sm-btn" id="deleteBtn"> delete </button> <button class="sm-btn"  id="completeBtn"> complete </button><button id="editBtn" class="sm-btn"> edit </button></li>'
+          '</p><button class="sm-btn" id="deleteBtn"> <i class="fa fa-2x  fa-trash" aria-hidden="true"></i> </button> <button class="sm-btn"  id="completeBtn"> <i class="fa fa-2x  fa-check" aria-hidden="true"></i> </button><button id="editBtn" class="sm-btn"> <i class="fa  fa-2x fa-pencil" aria-hidden="true"></i> </button></li>'
       )
       .addClass("todoStyle");
     $("ul").css("border", "1px rgb(91, 140, 90) solid");
@@ -60,6 +60,7 @@ $("body").on("click", "#deleteBtn", function() {
     if (todoList == ""){
    console.log("list is empty");
    $("ul").css("border", "none");
+   $("body").css("height" , "100vh");
  }
 });
 
@@ -73,20 +74,30 @@ $("body").on("click", "#completeBtn", function() {
 
 //edit button
 $("body").on("click", "#editBtn", function() {
+  // makes the text editable for a specofoc todo and adds styling
   $(this).siblings(".todoItemStyle").attr("contenteditable","true").css({
-    "background-color": "rgba(255,255,255,.8)", 
-    "border-radius": "5px",
+    "background-color": "rgba(255,255,255,.8)",
+    "border-radius": "15px",
     "height" : "25px",
-     "outline" : "none",
+    "outline" : "none",
      });
   console.log("edit clicked");
+  //chnages the edit button to be a save changes button
   $(this).text("save changes");
-  
   if($(this).text() === "save changes"){
-    $(this).addClass("saveBtn");
+  $(this).addClass("saveBtn");
   }
 });
 
 $("body").on("click", ".saveBtn", function() {
   console.log("saved clicked");
+  //chnages the save button back to the edit button
+  $(this).html('<i class="fa  fa-2x fa-pencil" aria-hidden="true"></i>');
+  $(this).removeClass("saveBtn");
+  $(this).siblings(".todoItemStyle").attr("contenteditable","false").css({
+    "background-color": "transparent",
+    "border-radius": "15px",
+    "height" : "25px",
+    "outline" : "none",
+     });
 });
