@@ -8,7 +8,7 @@ $("#add").on("click", function() {
     .val()
     .replace(/(<([^>]+)>)/gi, "");
   if (!todoItem.trim()) {
-    alert("please enter a to do");
+    alert("Please enter a to do");
   } else {
     todoList.push(todoItem);
     //empty the input field on click
@@ -33,14 +33,29 @@ $("#add").on("click", function() {
 //add button to complete all items
 $("#completeAll").on("click", function() {
   $(".todoItemStyle").toggleClass("completed");
+  if(todoList == ""){
+    alert("Please add some to dos to your list");
+  }
+});
+
+$("#uncompleteAll").on("click", function() {
+  $(".todoItemStyle").removeClass("completed completed-ind");
+  if(todoList == ""){
+    alert("Please add some to dos to your list");
+  }
 });
 
 //add button to restart list
 $("#newList").on("click", function() {
+  if(todoList == ""){
+    alert("Your list is rady for some to dos");
+    $("body").css("height" , "100vh");
+  } else {
   todoList = [];
   $(".todoContainer").html("");
   $("ul").css("border","none");
-   $("body").css("height" , "100vh");
+   $("body").css("height" , "120vh");
+ }
 });
 
 
