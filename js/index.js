@@ -21,7 +21,7 @@ $("#add").on("click", function() {
         '<li class="eachItem">' +
           '<p class="todoItemStyle">' +
           addedTodo +
-          '</p><button class="sm-btn" id="deleteBtn"> <i class="fa fa-2x  fa-trash" aria-hidden="true"></i> </button> <button class="sm-btn"  id="completeBtn"> <i class="fa fa-2x  fa-check" aria-hidden="true"></i> </button><button id="editBtn" class="sm-btn"> <i class="fa  fa-2x fa-pencil" aria-hidden="true"></i> </button></li>'
+          '</p><div class="button-container"><button class="sm-btn" id="deleteBtn"> <i class="fa fa-2x  fa-trash" aria-hidden="true"></i> </button> <button class="sm-btn"  id="completeBtn"> <i class="fa fa-2x  fa-check" aria-hidden="true"></i> </button><button id="editBtn" class="sm-btn"> <i class="fa  fa-2x fa-pencil" aria-hidden="true"></i> </button></div></li>'
       )
       .addClass("todoStyle");
     $("ul").css("border", "1px rgb(91, 140, 90) solid");
@@ -46,12 +46,12 @@ $("#newList").on("click", function() {
 
 //button to remove a todo
 $("body").on("click", "#deleteBtn", function() {
-  var todoText = $(this).parent().children(':first-child').text();
-  $(this).parent().remove();
+  var todoText = $(this).parent().siblings(".todoItemStyle").text();
+  $(this).parent().parent().remove();
 //Loop compares todo's position in the array to the text of the specifically pressed delete button
   for (var i = 0 ; i < todoList.length; i++){
       if(todoList[i] === todoText){
-      //console.log(todoList[i] + " is equal to " + todoText );
+      console.log(todoList[i] + " is equal to " + todoText );
       todoList = jQuery.grep(todoList, function(value) {
   return value != todoList[i];
       })
@@ -68,9 +68,7 @@ $("body").on("click", "#deleteBtn", function() {
 
 //button to complete a todo
 $("body").on("click", "#completeBtn", function() {
-  $(this)
-    .siblings(".todoItemStyle")
-    .toggleClass("completed-ind");
+  $(this).parent().siblings(".todoItemStyle").toggleClass("completed-ind");
   console.log("completed clicked");
 });
 
@@ -79,11 +77,12 @@ $("body").on("click", "#completeBtn", function() {
 //edit button
 $("body").on("click", "#editBtn", function() {
   // makes the text editable for a specofoc todo and adds styling
-  $(this).siblings(".todoItemStyle").attr("contenteditable","true").css({
+  $(this).parent().siblings(".todoItemStyle").attr("contenteditable","true").css({
     "background-color": "rgba(255,255,255,.8)",
     "border-radius": "15px",
-    "height" : "25px",
     "outline" : "none",
+    "padding" : "5px",
+    "height" : "100%"
      });
   console.log("edit clicked");
   //chnages the edit button to be a save changes button
@@ -98,10 +97,9 @@ $("body").on("click", ".saveBtn", function() {
   //chnages the save button back to the edit button
   $(this).html('<i class="fa  fa-2x fa-pencil" aria-hidden="true"></i>');
   $(this).removeClass("saveBtn");
-  $(this).siblings(".todoItemStyle").attr("contenteditable","false").css({
+  $(this).parent().siblings(".todoItemStyle").attr("contenteditable","false").css({
     "background-color": "transparent",
     "border-radius": "15px",
-    "height" : "25px",
     "outline" : "none",
      });
 });
