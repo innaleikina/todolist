@@ -1,0 +1,217 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+html{
+  font-family:"Helvetica";
+}
+
+body{
+  background-color:Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd186+0,eae8b6+50,eae8b6+51,ccce4e+100 */
+background: #cfd186; /* Old browsers */
+background: -moz-linear-gradient(45deg, #cfd186 0%, #eae8b6 50%, #eae8b6 51%, #ccce4e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #cfd186 0%,#eae8b6 50%,#eae8b6 51%,#ccce4e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #cfd186 0%,#eae8b6 50%,#eae8b6 51%,#ccce4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd186', endColorstr='#ccce4e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-repeat:no-repeat;
+  height:100vh;
+ }
+
+
+h1{
+  color:rgb(89, 97, 87);
+  padding-top:40px;
+}
+
+.main{
+  align-content:center;
+  align-items:center;
+  margin-bottom:10rem;
+}
+
+.all{
+  width:50%;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+  margin-top:30px;
+  background-color:rgba(255,255,255,.8);
+  box-shadow:0 10px 10px 6px gray;
+  border-radius:20px;
+  }
+
+@media only screen and (max-width:480px){
+  .all{
+  width:80%;
+  }
+}
+
+.container{
+  display:flex;  
+/*   border:1px blue solid; */
+  flex-direction:column;
+    align-items:center;
+}
+
+.completed{
+  text-decoration:line-through;
+  color:rgb(227, 101, 91);
+}
+
+.completed-ind{
+    text-decoration:line-through;
+  color:rgb(227, 101, 91);
+}
+
+.todoContainer{
+  width:90%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  align-content:center;
+}
+
+.todoStyle{
+/*   border:1px green solid; */
+  flex-direction:column;
+  display:flex;
+}
+
+.list{
+  width:100%;
+}
+
+ul {
+  
+  padding:10px 0;
+  list-style-type: none;
+  width:100%;
+/*   border:1px rgb(91, 140, 90) solid; */
+  margin-bottom:10px;
+  border-radius:10px;
+ 
+}
+
+.todoItemStyle:focus{
+ border: 3px rgba(91, 140, 90, .6) solid
+}
+
+.eachItem {
+  font-size:15px;
+  padding:10px;
+  margin:5px 15px;
+  background-color:Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd186+0,eae8b6+50,eae8b6+51,ccce4e+100 */
+background: #cfd186; /* Old browsers */
+background: -moz-linear-gradient(45deg, #cfd186 0%, #eae8b6 50%, #eae8b6 51%, #ccce4e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, #cfd186 0%,#eae8b6 50%,#eae8b6 51%,#ccce4e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, #cfd186 0%,#eae8b6 50%,#eae8b6 51%,#ccce4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd186', endColorstr='#ccce4e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  width:85%;
+/*   border:2px red solid; */
+  border-radius:20px;
+}
+
+li p{
+  width:100%;
+  margin-right:10px;
+  font-size:14px;
+  color:rgb(82, 65, 76)
+}
+
+.global-buttons{
+  height:30px;
+  width:160px;
+  border-radius:10px;
+  background-color:rgb(91, 140, 90);
+  color:white;
+  font-size:14px;
+  font-weight:light;
+  outline:none;
+  padding:20px;
+  margin:20px 5px;
+  line-height:0;
+  letter-spacing:1px;
+  box-shadow:0px 3px 4px gray;
+  border:none;
+  background-position: 0 -40px;
+  transition: all .3s ease-in;
+/*   transition: background 2s linear; */
+  }
+
+@media only screen and (max-width:720px){
+  .global-buttons{
+  margin:10px;
+  }
+  
+  .buttons{
+    margin-top:10px;
+  }
+}
+
+
+.global-buttons:hover{
+  background-color:white;
+  color:rgb(91, 140, 90);
+  box-shadow:0px 2px 3px gray;
+  top:2px;  
+
+}
+.global-buttons:active{
+  box-shadow:none;
+  top:6px;
+}
+
+label{
+  color:rgb(227, 101, 91);
+  margin:20px 0 10px 0;
+}
+
+#add{
+  margin-bottom:40px;
+ height:30px;
+  width:160px;
+  border-radius:10px;
+  background-color:rgb(227, 101, 91);
+}
+
+#add:hover{
+  color:white;
+  box-shadow:0px 2px 2px gray;
+  top:3px;
+  background-color:rgba(227, 101, 91, .8);
+}
+
+#add:active{
+  box-shadow:0px 1px 1px gray;
+  top:3px;
+  background-color:rgba(227, 101, 91, 1);
+}
+
+#todoInput {
+  padding:8px;
+  border-radius:5px;
+  border:.5px rgba(91, 140, 90, .6) solid;
+}
+
+#todoInput:focus{
+outline:none;
+  border: 3px rgba(91, 140, 90, .6) solid;
+}
+
+.sm-btn{
+  border:none;
+  background-color:white;
+  color:rgb(227, 101, 91);
+   border-radius:5px;
+  padding:2px;
+  box-shadow:0 2px 2px 1px rgba(227, 101, 91, .2);;
+  border:none;
+  outline:none;
+  padding:5px;
+  margin:10px 4px;
+}
+
+.sm-btn:focus{
+  outline:none;
+}
