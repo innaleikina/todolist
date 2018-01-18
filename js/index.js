@@ -40,6 +40,7 @@ $("#newList").on("click", function() {
   todoList = [];
   $(".todoContainer").html("");
   $("ul").css("border","none");
+   $("body").css("height" , "100vh");
 });
 
 
@@ -64,6 +65,7 @@ $("body").on("click", "#deleteBtn", function() {
  }
 });
 
+
 //button to complete a todo
 $("body").on("click", "#completeBtn", function() {
   $(this)
@@ -71,6 +73,8 @@ $("body").on("click", "#completeBtn", function() {
     .toggleClass("completed-ind");
   console.log("completed clicked");
 });
+
+
 
 //edit button
 $("body").on("click", "#editBtn", function() {
