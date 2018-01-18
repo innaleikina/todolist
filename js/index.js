@@ -48,7 +48,7 @@ $("#uncompleteAll").on("click", function() {
 //add button to restart list
 $("#newList").on("click", function() {
   if(todoList == ""){
-    alert("Your list is rady for some to dos");
+    alert("Your list is ready for some to dos");
     $("body").css("height" , "100vh");
   } else {
   todoList = [];
