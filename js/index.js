@@ -34,10 +34,14 @@ $("#add").on("click", function() {
 //______________GLOBAL BUTTONS THAT AFFECT ALL TO DOS
 //check all (but not the ones that were already individually checked)
 $("#completeAll").on("click", function() {
+  if($(".todoItemStyle").attr("contenteditable") ==  "true" ){
+    alert ("You have edited to dos that are unsaved. Please save them first.");
+  }else {
   $(".todoItemStyle").toggleClass("completed");
   if(todoList == ""){
     alert("Please add some to dos to your list");
-  }
+}
+}
 });
 
 //uncheck all
@@ -84,12 +88,6 @@ $("body").on("click", "#deleteBtn", function() {
  }
 });
 
-//button to complete a todo
-$("body").on("click", "#completeBtn", function() {
-  $(this).parent().siblings(".todoItemStyle").toggleClass("completed-ind");
-  console.log("completed clicked");
-});
-
 //edit button
 $("body").on("click", "#editBtn", function() {
   // makes the text editable for a specofoc todo and adds styling
@@ -101,7 +99,7 @@ $("body").on("click", "#editBtn", function() {
     "height" : "100%"
      });
   console.log("edit clicked");
-  //chnages the edit button to be a save changes button
+  //changes the edit button to be a save changes button
   $(this).text("save changes");
   if($(this).text() === "save changes"){
   $(this).addClass("saveBtn");
@@ -121,6 +119,15 @@ $("body").on("click", ".saveBtn", function() {
      });
 });
 
+//button to complete a todo
+$("body").on("click", "#completeBtn", function() {
+  if($(this).parent().siblings(".todoItemStyle").attr("contenteditable") ==  "true" ){
+    alert ("You have edited to dos that are unsaved. Please save them first.");
+  } else  {
+  $(this).parent().siblings(".todoItemStyle").toggleClass("completed-ind");
+  console.log("completed clicked");
+}
+});
 
 //__________________________DROP DOWN MENU SECTION
 $(".buttons").hide();
@@ -128,3 +135,7 @@ $(".drop-down-menu").on("click", function(){
   console.log("drop down pressed");
 $(".buttons").toggle();
 });
+
+$(".buttons").on("click", function(){
+  $(".buttons").hide();
+})

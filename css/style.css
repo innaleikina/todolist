@@ -155,7 +155,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd186', end
   border-radius:20px;
   margin-top:8rem;
   position:fixed;
+  margin-left:30px;
   /*margin-top:30vh;*/
+}
+
+@media only screen and (min-width:768px){
+.buttons{
+  margin-top:7rem;
+  margin-left:70px;
+}
 }
 
 .global-buttons{
