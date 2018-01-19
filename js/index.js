@@ -2,7 +2,7 @@ var todoList = [];
 var addedTodo;
 
 
-
+// _________________ADD ITEMS TO LIST
 $("#add").on("click", function() {
     var todoItem = $("#todoInput")
     .val()
@@ -21,7 +21,7 @@ $("#add").on("click", function() {
         '<li class="eachItem">' +
           '<p class="todoItemStyle">' +
           addedTodo +
-          '</p><div class="button-container"><button class="sm-btn" id="deleteBtn"> <i class="fa fa-2x  fa-trash" aria-hidden="true"></i> </button> <button class="sm-btn"  id="completeBtn"> <i class="fa fa-2x  fa-check" aria-hidden="true"></i> </button><button id="editBtn" class="sm-btn"> <i class="fa  fa-2x fa-pencil" aria-hidden="true"></i> </button></div></li>'
+          '</p><div class="button-sm-container"><button class="sm-btn" id="deleteBtn"> <i class="fa fa-2x  fa-trash" aria-hidden="true"></i> </button> <button class="sm-btn"  id="completeBtn"> <i class="fa fa-2x  fa-check" aria-hidden="true"></i> </button><button id="editBtn" class="sm-btn"> <i class="fa  fa-2x fa-pencil" aria-hidden="true"></i> </button></div></li>'
       )
       .addClass("todoStyle");
     $("ul").css("border", "1px rgb(91, 140, 90) solid");
@@ -30,7 +30,9 @@ $("#add").on("click", function() {
    console.log(todoList);
  });
 
-//add button to complete all items
+
+//______________GLOBAL BUTTONS THAT AFFECT ALL TO DOS
+//check all (but not the ones that were already individually checked)
 $("#completeAll").on("click", function() {
   $(".todoItemStyle").toggleClass("completed");
   if(todoList == ""){
@@ -38,6 +40,7 @@ $("#completeAll").on("click", function() {
   }
 });
 
+//uncheck all
 $("#uncompleteAll").on("click", function() {
   $(".todoItemStyle").removeClass("completed completed-ind");
   if(todoList == ""){
@@ -45,7 +48,7 @@ $("#uncompleteAll").on("click", function() {
   }
 });
 
-//add button to restart list
+//genrate a new list
 $("#newList").on("click", function() {
   if(todoList == ""){
     alert("Your list is ready for some to dos");
@@ -59,6 +62,7 @@ $("#newList").on("click", function() {
 });
 
 
+//__________________INDIVIDUAL TO DO BUTTONS
 //button to remove a todo
 $("body").on("click", "#deleteBtn", function() {
   var todoText = $(this).parent().siblings(".todoItemStyle").text();
@@ -80,14 +84,11 @@ $("body").on("click", "#deleteBtn", function() {
  }
 });
 
-
 //button to complete a todo
 $("body").on("click", "#completeBtn", function() {
   $(this).parent().siblings(".todoItemStyle").toggleClass("completed-ind");
   console.log("completed clicked");
 });
-
-
 
 //edit button
 $("body").on("click", "#editBtn", function() {
@@ -107,6 +108,7 @@ $("body").on("click", "#editBtn", function() {
   }
 });
 
+// save an edited to do button
 $("body").on("click", ".saveBtn", function() {
   console.log("saved clicked");
   //chnages the save button back to the edit button
@@ -117,4 +119,12 @@ $("body").on("click", ".saveBtn", function() {
     "border-radius": "15px",
     "outline" : "none",
      });
+});
+
+
+//__________________________DROP DOWN MENU SECTION
+$(".buttons").hide();
+$(".drop-down-menu").on("click", function(){
+  console.log("drop down pressed");
+$(".buttons").toggle();
 });
