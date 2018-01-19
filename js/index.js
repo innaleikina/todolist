@@ -4,6 +4,8 @@ var addedTodo;
 
 // _________________ADD ITEMS TO LIST
 $("#add").on("click", function() {
+
+  //todo is added
     var todoItem = $("#todoInput")
     .val()
     .replace(/(<([^>]+)>)/gi, "");
@@ -21,11 +23,11 @@ $("#add").on("click", function() {
         '<li class="eachItem">' +
           '<p class="todoItemStyle">' +
           addedTodo +
-          '</p><div class="button-sm-container"><button class="sm-btn" id="deleteBtn"> <i class="fa fa-2x  fa-trash" aria-hidden="true"></i> </button> <button class="sm-btn"  id="completeBtn"> <i class="fa fa-2x  fa-check" aria-hidden="true"></i> </button><button id="editBtn" class="sm-btn"> <i class="fa  fa-2x fa-pencil" aria-hidden="true"></i> </button></div></li>'
+          '</p><div class="button-sm-container"><button class="sm-btn" id="deleteBtn"> <i class="fa fa-trash" aria-hidden="true"></i> </button> <button class="sm-btn"  id="completeBtn"> <i class="fa  fa-check" aria-hidden="true"></i> </button><button id="editBtn" class="sm-btn"> <i class="fa fa-pencil" aria-hidden="true"></i> </button></div></li>'
       )
       .addClass("todoStyle");
     $("ul").css("border", "1px rgb(91, 140, 90) solid");
-    $("body").css("height", "130%")
+    $("body").css("height", "120vh")
   }
    console.log(todoList);
  });

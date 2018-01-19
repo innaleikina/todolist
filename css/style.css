@@ -21,14 +21,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd186', end
 
 h1{
   color:rgb(89, 97, 87);
-  padding-top:40px;
 }
 
 .main{
   align-content:center;
   align-items:center;
   margin:0px 14px 10rem 14px;
-
 }
 
 .all{
@@ -65,14 +63,13 @@ h1{
 }
 
 .todoStyle{
-/*   border:1px green solid; */
   flex-direction:column;
   display:flex;
 }
 
 .list{
   width:100%;
-  margin-top:30px;
+  /*margin-top:10px;*/
 }
 
 ul {
@@ -86,7 +83,7 @@ ul {
 }
 
 .todoItemStyle {
-    font-weight:bold;
+    /*font-weight:bold;*/
     line-height:22px;
     text-align:center;
     /*width:100%;*/
@@ -113,7 +110,7 @@ ul {
 
 .eachItem {
   font-size:15px;
-  padding:10px;
+  /*padding:10px;*/
   margin:5px 15px;
   background-color:Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd186+0,eae8b6+50,eae8b6+51,ccce4e+100 */
 background: #cfd186; /* Old browsers */
@@ -121,7 +118,7 @@ background: -moz-linear-gradient(45deg, #cfd186 0%, #eae8b6 50%, #eae8b6 51%, #c
 background: -webkit-linear-gradient(45deg, #cfd186 0%,#eae8b6 50%,#eae8b6 51%,#ccce4e 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(45deg, #cfd186 0%,#eae8b6 50%,#eae8b6 51%,#ccce4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd186', endColorstr='#ccce4e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  width:85%;
+width:90%;
 /*   border:2px red solid; */
   border-radius:20px;
 }
@@ -157,6 +154,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd186', end
   position:fixed;
   margin-left:30px;
   /*margin-top:30vh;*/
+}
+
+.button-sm-container{
+  width:100%;
+  display:flex;
+  justify-content: space-around;
 }
 
 @media only screen and (min-width:768px){
@@ -199,15 +202,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd186', end
   top:6px;
 }
 
+.input-btn{
+  display:flex;
+  width:100%;
+  /*border:1px red solid;*/
+  justify-content: space-around;
+}
+
 label{
   color:rgb(227, 101, 91);
-  margin:20px 0 10px 0;
+  /*border:1px red solid;*/
+  width:100%;
+  text-align:left;
+  margin-left:20px;
+  margin-bottom:-10px;
+  margin-top:20px;
 }
 
 #add{
   margin-bottom:40px;
   height:50px;
-  width:160px;
+  width:100px;
   border-radius:10px;
   background-color:rgb(227, 101, 91);
   text-align:center;
@@ -230,6 +245,10 @@ label{
   padding:8px;
   border-radius:5px;
   border:.5px rgba(91, 140, 90, .6) solid;
+  height:50%;
+  width:90%;
+  margin-left:10px;
+  margin-top:20px;
 }
 
 #todoInput:focus{
